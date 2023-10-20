@@ -1,0 +1,21 @@
+<div class="form-main">
+  <div class="user-main">
+    <h1>User Create</h1>
+    <form [formGroup]="userForm">
+        <mat-form-field>
+          <input matInput formControlName="name" placeholder="Name" />
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput formControlName="email" placeholder="Email" />
+          <mat-error *ngIf="userForm.get('email')?.hasError('email')">Invalid email format</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput formControlName="role" placeholder="Role" />
+        </mat-form-field>
+        <div class="btn-main">
+          <button mat-raised-button (click)="addUser()">Add User</button>
+        </div>
+      </form>
+  </div>
+</div>
+  
